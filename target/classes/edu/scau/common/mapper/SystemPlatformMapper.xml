@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.scau.common.mapper.SystemPlatformMapper">
+    <resultMap id="systemMap" type="edu.scau.common.pojo.SystemPlatform">
+        <id column="id" property="id"/>
+        <result column="icon_url" property="icon"/>
+        <result column="system_name" property="systemName"/>
+        <result column="system_info" property="systemInfo"/>
+    </resultMap>
+    <select id="selectAllSystemPlatform" resultMap="systemMap">
+        select * from SystemPlatform
+    </select>
+    <insert id="insertSystemPlatform" parameterType="edu.scau.common.pojo.SystemPlatform" >
+        INSERT INTO smart ( icon_url, system_name,system_info )
+                       VALUES
+                       ( #{icon}, #{systemName},#{systemInfo} )
+    </insert>
+    <update id="updateSystemPlatform" parameterType="edu.scau.common.pojo.SystemPlatform">
+        update smart SET icon_url = #{icon},system_name=#{systemName},system_info=#{systemInfo}
+        where id = #{id}
+    </update>
+    <delete id="deleteSystemPlatform" parameterType="java.lang.Integer">
+        DELETE FROM SystemPlatform WHERE id = #{id}
+    </delete>
+</mapper>
