@@ -18,7 +18,7 @@ public interface ImageService {
      * @param resp 通过resp的outputstream返回图片
      * @throws IOException
      */
-    void get(String folder, HttpServletResponse resp) throws IOException;
+    void get(String folder, HttpServletResponse resp,String name) throws IOException;
 
 
     /**
@@ -27,7 +27,7 @@ public interface ImageService {
      * @return
      * @throws IOException
      */
-    Picture save(InputStream inputStream) throws IOException;
+    Picture save(String oldName, InputStream inputStream) throws IOException;
 
     /**
      * 批量删除服务器图片

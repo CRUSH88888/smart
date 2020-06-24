@@ -24,6 +24,7 @@ public class SystemPlatformServiceImpl implements SystemPlatformService {
 
     @Override
     public Integer insertSystemPlatform(SystemPlatform systemPlatform) {
+
         return systemPlatformMapper.insertSystemPlatform(systemPlatform);
     }
 

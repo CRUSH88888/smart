@@ -51,12 +51,11 @@ public class MyUtil {
     /**
      * 生成文件url
      * @param controller 取出文件经由的controller
-     * @param folder 所在文件夹
      * @param fileName 文件名
      * @return 获取文件的url
      */
-    public static String fileUrl(String controller, String folder, String fileName) {
-        return URL_HEAD + controller + "?folder=" + folder + "&name=" + fileName;
+    public static String fileUrl(String controller,String fileName) {
+        return URL_HEAD + controller + "?folder=" +  "&name=" + fileName;
     }
 
     /**
